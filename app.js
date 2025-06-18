@@ -232,9 +232,3 @@ class QuizApp {
 document.addEventListener('DOMContentLoaded', () => {
     new QuizApp();
 });
-
-// Save scores before page unload
-window.addEventListener('beforeunload', () => {
-    const scores = document.quizApp?.questions.map(q => q.score) || [];
-    localStorage.setItem('quiz_scores', JSON.stringify(scores));
-});
