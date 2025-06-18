@@ -36,17 +36,41 @@ class QuizApp {
     parseCSV(csvText) {
         const questions = [];
         const rows = csvText.split('\n').slice(1); // Skip header row
-        
+    
         for (const row of rows) {
             if (!row.trim()) continue;
-            
-            const cols = row.split(';').map(col => col.trim());
+    
+            // Robust CSV parsing with support for quoted values
+            const cols = [];
+            let current = '';
+            let inQuotes = false;
+    
+            for (let i = 0; i < row.length; i++) {
+                const char = row[i];
+                const nextChar = row[i + 1];
+    
+                if (char === '"') {
+                    if (inQuotes && nextChar === '"') {
+                        current += '"'; // Escaped quote
+                        i++; // Skip the next quote
+                    } else {
+                        inQuotes = !inQuotes;
+                    }
+                } else if (char === ';' && !inQuotes) {
+                    cols.push(current.trim().replace(/^"|"$/g, ''));
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            cols.push(current.trim().replace(/^"|"$/g, ''));
+    
             if (cols.length < 9) continue;
-            
+    
             const question = cols[0];
             const options = cols.slice(1, 8).filter(opt => opt);
             const correct = cols[8].split(',').map(num => parseInt(num)).filter(num => !isNaN(num));
-            
+    
             if (question && options.length > 0 && correct.length > 0) {
                 questions.push({
                     question,
@@ -56,7 +80,7 @@ class QuizApp {
                 });
             }
         }
-        
+    
         return questions;
     }
     
@@ -175,14 +199,19 @@ class QuizApp {
         this.saveScores();
         this.updateScoreDisplay();
         
-        // Mark correct answers
+        // Mark correct answers with green color
         checkboxes.forEach(checkbox => {
             checkbox.disabled = true;
             const origIdx = parseInt(checkbox.dataset.origIdx);
+            const label = checkbox.parentElement;
+            const textSpan = label.querySelector('.label-text');
             
             if (this.correctOptionsSet.has(origIdx)) {
-                checkbox.closest('.form-control').classList.add('bg-success', 'bg-opacity-20');
-                checkbox.closest('label').classList.add('font-bold');
+                // Change checkbox to green
+                checkbox.classList.remove('checkbox-primary');
+                checkbox.classList.add('checkbox-success');
+                // Make text green and bold
+                textSpan.classList.add('text-success', 'font-bold');
             }
         });
         
@@ -199,7 +228,7 @@ class QuizApp {
     }
 }
 
-// Initialize the app when the page loads.
+// Initialize the app when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     new QuizApp();
 });
