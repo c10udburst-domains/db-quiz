@@ -1,0 +1,97 @@
+db_19_Oracle_Security.pdf
+db_16_NoSQL_ISI_IAD.pdf
+db_13_system_architecture_patterns.pdf
+db_9_jdbc.pdf, db_12_.NET.pdf
+db_10_concurrency_issues.pdf
+db_15_Big_Data.pdf
+db_2_relational_databases.pdf
+db_3_4_entity_relationship_modelling.pdf
+db_20_GIS.pdf
+db_16_NoSQL_ISI_IAD.pdf
+db_16_NoSQL_ISI_IAD.pdf
+db_16_NoSQL_ISI_IAD.pdf
+db_21_keys_loader_globalisation.pdf
+db_8_indexes.pdf, db_11_stored_procedures.pdf
+db_6_sql_select_part_II.pdf
+db_10_concurrency_issues.pdf
+db_10_concurrency_issues.pdf
+db_11_stored_procedures.pdf
+db_13_system_architecture_patterns.pdf
+db_2_relational_databases.pdf, db_3_4_entity_relationship_modelling.pdf
+db_2_relational_databases.pdf
+db_2_relational_databases.pdf
+db_2_relational_databases.pdf
+db_3_4_entity_relationship_modelling.pdf
+db_7_transactions.pdf
+db_5_sql_select.pdf
+db_14_data_warehouses.pdf
+db_18_Oracle_Storage_Backup.pdf, db_8_indexes.pdf
+db_20_GIS.pdf
+db_19_Oracle_Security.pdf
+db_20_GIS.pdf
+db_8_indexes.pdf, db_11_stored_procedures.pdf
+db_16_NoSQL_ISI_IAD.pdf
+db_3_4_entity_relationship_modelling.pdf
+db_6_sql_select_part_II.pdf
+db_14_data_warehouses.pdf
+db_17_Oracle_Net.pdf, db_18_Oracle_Storage_Backup.pdf, db_19_Oracle_Security.pdf
+db_13_system_architecture_patterns.pdf
+db_17_Oracle_Net.pdf
+db_2_relational_databases.pdf, db_6_sql_select_part_II.pdf
+db_9_jdbc.pdf, db_12_.NET.pdf
+db_7_transactions.pdf, db_18_Oracle_Storage_Backup.pdf
+db_17_Oracle_Net.pdf, db_18_Oracle_Storage_Backup.pdf, db_19_Oracle_Security.pdf
+db_9_jdbc.pdf, db_12_.NET.pdf, db_17_Oracle_Net.pdf
+db_7_transactions.pdf, db_18_Oracle_Storage_Backup.pdf
+db_1_introduction_pl_inf.pdf
+db_17_Oracle_Net.pdf
+db_7_transactions.pdf
+db_18_Oracle_Storage_Backup.pdf
+db_10_concurrency_issues.pdf, db_7_transactions.pdf, db_8_indexes.pdf, db_11_stored_procedures.pdf
+db_7_transactions.pdf
+db_7_transactions.pdf
+db_2_relational_databases.pdf
+db_13_system_architecture_patterns.pdf
+db_2_relational_databases.pdf
+db_8_indexes.pdf
+db_15_Big_Data.pdf
+db_9_jdbc.pdf, db_12_.NET.pdf
+db_7_transactions.pdf
+db_7_transactions.pdf
+db_17_Oracle_Net.pdf
+db_2_relational_databases.pdf
+db_10_concurrency_issues.pdf
+db_14_data_warehouses.pdf, db_6_sql_select_part_II.pdf
+db_2_relational_databases.pdf
+db_15_Big_Data.pdf
+db_2_relational_databases.pdf
+db_3_4_entity_relationship_modelling.pdf
+db_16_NoSQL_ISI_IAD.pdf
+db_8_indexes.pdf
+db_16_NoSQL_ISI_IAD.pdf
+db_7_transactions.pdf
+db_1_introduction_pl_inf.pdf
+db_7_transactions.pdf
+db_14_data_warehouses.pdf
+db_14_data_warehouses.pdf
+db_15_Big_Data.pdf
+db_9_jdbc.pdf, db_12_.NET.pdf
+db_18_Oracle_Storage_Backup.pdf
+db_9_jdbc.pdf, db_12_.NET.pdf
+db_2_relational_databases.pdf
+db_18_Oracle_Storage_Backup.pdf
+db_7_transactions.pdf
+db_8_indexes.pdf
+db_15_Big_Data.pdf, db_16_NoSQL_ISI_IAD.pdf
+db_8_indexes.pdf
+db_2_relational_databases.pdf
+db_3_4_entity_relationship_modelling.pdf, db_2_relational_databases.pdf
+db_9_jdbc.pdf
+db_12_.NET.pdf, db_9_jdbc.pdf
+No relevant information in sources.
+db_17_Oracle_Net.pdf
+db_18_Oracle_Storage_Backup.pdf
+db_8_indexes.pdf
+db_18_Oracle_Storage_Backup.pdf
+db_9_jdbc.pdf
+db_18_Oracle_Storage_Backup.pdf

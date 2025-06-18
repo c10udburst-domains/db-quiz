@@ -5,6 +5,8 @@ class QuizApp {
         this.currentQuestionIndex = null;
         this.correctOptionsSet = new Set();
         this.shuffledOptions = [];
+        this.sources = [];
+        this.pdf_url = 'https://wutwaw.sharepoint.com/sites/F3FE83EE-07DD-47E8-86F9-2C0E6BAFB4A1.teams/Shared%20Documents/wyk%C5%82ady/';
         
         this.scoreDisplay = document.getElementById('score-display');
         this.currentProb = document.getElementById('current-prob');
@@ -13,11 +15,13 @@ class QuizApp {
         this.optionsContainer = document.getElementById('options-container');
         this.submitBtn = document.getElementById('submit-btn');
         this.continueBtn = document.getElementById('continue-btn');
+        this.sourcesFooter = document.getElementById('sources-footer');
         
         this.submitBtn.addEventListener('click', () => this.checkAnswer());
         this.continueBtn.addEventListener('click', () => this.loadQuestion());
         
         this.loadQuestions();
+        this.loadSources();
     }
     
     async loadQuestions() {
@@ -26,10 +30,22 @@ class QuizApp {
             const csvText = await response.text();
             this.questions = this.parseCSV(csvText);
             this.loadScores();
-            this.loadQuestion();
         } catch (error) {
             console.error('Error loading questions:', error);
             this.questionElement.textContent = 'Failed to load questions. Please try again later.';
+        }
+    }
+
+    async loadSources() {
+        try {
+            const response = await fetch('pdf.txt');
+            const text = await response.text();
+            this.sources = text.split('\n').map(line => 
+                line.split(', ').map(pdf => pdf.trim())
+            );
+            this.loadQuestion();
+        } catch (error) {
+            console.error('Error loading sources:', error);
         }
     }
     
@@ -169,6 +185,39 @@ class QuizApp {
             optionDiv.appendChild(label);
             this.optionsContainer.appendChild(optionDiv);
         });
+
+        this.displaySources();
+    }
+
+    displaySources() {
+        this.sourcesFooter.innerHTML = '';
+        
+        if (!this.currentQuestionIndex || 
+            !this.sources[this.currentQuestionIndex] ||
+            this.sources[this.currentQuestionIndex].length === 0) {
+            return;
+        }
+        
+        const sourceText = document.createElement('p');
+        sourceText.className = 'text-sm mt-4 text-gray-600';
+        sourceText.textContent = '';
+        
+        this.sources[this.currentQuestionIndex].forEach((pdf, index) => {
+            const link = document.createElement('a');
+            link.href = `${this.pdf_url}${encodeURIComponent(pdf)}`;
+            link.textContent = pdf;
+            link.className = 'mx-1';
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            
+            sourceText.appendChild(link);
+            
+            if (index < this.sources[this.currentQuestionIndex].length - 1) {
+                sourceText.appendChild(document.createTextNode(', '));
+            }
+        });
+        
+        this.sourcesFooter.appendChild(sourceText);
     }
     
     shuffle(array) {
