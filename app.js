@@ -191,9 +191,9 @@ class QuizApp {
         // Update score
         const isCorrect = this.setEqual(selected, this.correctOptionsSet);
         if (isCorrect) {
-            this.currentQuestion.score = Math.max(0.1, this.currentQuestion.score - 0.1);
+            this.currentQuestion.score = Math.max(0.1, this.currentQuestion.score - 0.4);
         } else {
-            this.currentQuestion.score = Math.min(2.0, this.currentQuestion.score + 0.1);
+            this.currentQuestion.score = Math.min(3.0, this.currentQuestion.score + 0.4);
         }
         
         this.saveScores();
