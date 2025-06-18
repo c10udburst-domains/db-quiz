@@ -199,7 +199,7 @@ class QuizApp {
     }
 }
 
-// Initialize the app when the page loads
+// Initialize the app when the page loads.
 document.addEventListener('DOMContentLoaded', () => {
     new QuizApp();
 });
