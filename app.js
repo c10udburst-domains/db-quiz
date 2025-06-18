@@ -22,7 +22,7 @@ class QuizApp {
     
     async loadQuestions() {
         try {
-            const response = await fetch('/q.csv');
+            const response = await fetch('q.csv');
             const csvText = await response.text();
             this.questions = this.parseCSV(csvText);
             this.loadScores();
